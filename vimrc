@@ -215,3 +215,6 @@ noremap <silent> <F3> :call UnSpell()<CR>
 " noremap <silent> & viw"ly:!grep -nrI '<C-r>l' .<CR>
 " Second attempt uses vim's <cword>
 noremap <silent> & :!grep -nrI '\<<cword>\>' .<CR>
+
+" CtrlP setup
+set runtimepath^=~/.vim/bundle/ctrlp.vim
