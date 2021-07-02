@@ -7,7 +7,9 @@ au BufWritePost .vimrc so ~/.vimrc
 " general appearance
 colo desert
 set nu
-" hi CursorLineNr gui=bold guifg=grey50
+set cursorline
+hi cursorline guibg=NONE
+hi CursorLineNr gui=bold guifg=grey70
 hi LineNr guifg=grey50
 set lines=40 columns=130
 set foldmethod=indent
@@ -218,3 +220,4 @@ noremap <silent> & :!grep -nrI '\<<cword>\>' .<CR>
 
 " CtrlP setup
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
