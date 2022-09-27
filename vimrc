@@ -221,3 +221,5 @@ noremap <silent> & :!grep -nrI '\<<cword>\>' .<CR>
 " CtrlP setup
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+" Map for undotree
+nnoremap <F5> :UndotreeToggle<CR>
