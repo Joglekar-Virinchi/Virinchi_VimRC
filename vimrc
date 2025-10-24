@@ -216,10 +216,31 @@ noremap <silent> <F3> :call UnSpell()<CR>
 " in command mode
 " noremap <silent> & viw"ly:!grep -nrI '<C-r>l' .<CR>
 " Second attempt uses vim's <cword>
-noremap <silent> & :!grep -nrI '\<<cword>\>' .<CR>
+noremap & :below term bash -c "grep -nrI '\\<<cword>\\>' ."<CR>
 
 " CtrlP setup
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Map for undotree
 nnoremap <F5> :UndotreeToggle<CR>
+
+" Vimspector mappings
+let g:vimspector_base_dir='/home/virinchi/.vim/pack/vimspector/opt/vimspector'
+packadd! vimspector
+nnoremap <silent> <Space>db :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <silent> <Space>dB :call vimspector#ToggleAdvancedBreakpoint()<CR>
+nnoremap <silent> <Space>do :call vimspector#StepOver()<CR>
+nnoremap <silent> <Space>di :call vimspector#StepInto()<CR>
+nnoremap <silent> <Space>dO :call vimspector#StepOut()<CR>
+nnoremap <silent> <Space>dC :call vimspector#RunToCursor()<CR>
+nnoremap <silent> <Space>dc :call vimspector#Continue()<CR>
+nnoremap <silent> <Space>dl :call vimspector#Launch()<CR>
+nnoremap <silent> <Space>dj :call vimspector#JumpToProgramCounter()<CR>
+nnoremap <silent> <Space>dw :exec ":VimspectorWatch ".input("Enter watch expression:")<CR>
+nnoremap <silent> <Space>d<Up> :call vimspector#UpFrame()<CR>
+nnoremap <silent> <Space>d<Down> :call vimspector#DownFrame()<CR>
+nnoremap <silent> <Space>de :call vimspector#DownFrame()<CR>
+nnoremap <silent> <Space>dT :call vimspector#Stop()<CR>
+
+set visualbell
+" set t_vb=\|100f
